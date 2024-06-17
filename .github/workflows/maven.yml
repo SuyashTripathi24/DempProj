@@ -29,9 +29,7 @@ jobs:
         distribution: 'temurin'
         cache: maven
     - name: Build with Maven
-      run: |
-        mvn -B package --file pom.xml
-        mkdir staging && cp target/*.war staging
+      run: mvn -B package --file pom.xml
 
     - name: Step 4 - List out from current directory
       run: ls -a
@@ -55,6 +53,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     - run: mvn --batch-mode --update-snapshots verify
+    - run: mkdir staging && cp target/*.war staging
     - uses: actions/upload-artifact@v3
       with:
         name: Package
