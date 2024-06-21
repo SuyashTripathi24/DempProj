@@ -1,5 +1,5 @@
 
-name: Java Maven Build and Publish Artifact With Single Job
+name: Java Maven Build and Publish Artifact With SingleJob
 
 on:
   push:
